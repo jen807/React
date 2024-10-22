@@ -4,7 +4,7 @@
 // import { Footer } from "./components/ex01/Footer";
 // import PropsEx from "./components/ex02/PropsEx";
 // import { Ex03 } from "./components/ex03/Ex03";
-import MusicApp from "./components/ex04/Ex04";
+import { MusicApp } from "./components/ex05/MusicApp";
 
 const App = () => {
   return (
