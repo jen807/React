@@ -4,7 +4,8 @@
 // import { Footer } from "./components/ex01/Footer";
 // import PropsEx from "./components/ex02/PropsEx";
 // import { Ex03 } from "./components/ex03/Ex03";
-import { MusicApp } from "./components/ex05/MusicApp";
+// import { MusicApp } from "./components/ex05/MusicApp";
+import Ex06 from "./components/ex06/Ex06";
 
 const App = () => {
   return (
@@ -19,13 +20,14 @@ const App = () => {
     //   <Footer />
     // </>
 
-    // <>
+    // <Ex06>
     //   <PropsEx />
     // </>
 
     // <Ex03 />
     // <Ex04 />
-    <MusicApp />
+    // <MusicApp />
+    <Ex06 />
   );
 };
 
