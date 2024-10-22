@@ -1,9 +1,9 @@
-import {
-  faEllipsis,
-  faVolumeHigh,
-  faVolumeOff,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {
+//   faEllipsis,
+//   faVolumeHigh,
+//   faVolumeOff,
+// } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import PlayBtn from "./components/PlayBtn";
 import PlayWrap from "./components/PlayWrap";
