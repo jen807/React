@@ -6,7 +6,8 @@
 // import { Ex03 } from "./components/ex03/Ex03";
 // import { MusicApp } from "./components/ex05/MusicApp";
 // import Ex06 from "./components/ex06/Ex06";
-import Event from "./components/ex06/components/Event";
+// import Event from "./components/ex06/components/Event";
+import Ex07 from "./components/ex07/Ex07";
 
 const App = () => {
   return (
@@ -29,7 +30,8 @@ const App = () => {
     // <Ex04 />
     // <MusicApp />
     // <Ex06 />
-    <Event />
+    // <Event />
+    <Ex07 />
   );
 };
 
