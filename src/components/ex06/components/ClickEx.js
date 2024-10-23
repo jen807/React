@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-const Ex06 = () => {
+const ClickEx = () => {
   const [num, setNum] = useState(0);
-  // =>useState는 리액트 상태관리 hook (앞에 use가 붙으면 hook)
+  //   =>useState는 리액트 상태관리 hook (앞에 use가 붙으면 hook)
   //   =>배열 비구조화 할당을 동하여 사용하며 반드시 import해서 사용(react 자체에 내장되어있음)
   //   =>const [변수명, set변수명] = useState(초기화 값);
 
@@ -35,4 +35,4 @@ const Ex06 = () => {
   );
 };
 
-export default Ex06;
+export default ClickEx;
