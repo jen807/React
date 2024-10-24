@@ -6,7 +6,7 @@ const SHeader = styled.div`
   justify-content: flex-end;
   align-items: center;
   padding: 0 30px;
-  background-color: cornflowerblue;
+  background-color: lightgray;
 
   ul {
     max-width: 500px;
@@ -27,11 +27,11 @@ const Header = () => {
         </li>
 
         <li>
-          <Link to="/sub01">1번 서브 페이지</Link>
+          <Link to="/sub/0">1번 서브 페이지</Link>
         </li>
 
         <li>
-          <Link to="/sub01">2번 서브 페이지</Link>
+          <Link to="/sub/1">2번 서브 페이지</Link>
         </li>
       </ul>
     </SHeader>

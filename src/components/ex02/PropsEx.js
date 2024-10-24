@@ -1,6 +1,6 @@
 // import { Contents } from "./components/Contents";
 import { Ex } from "./components/Ex";
-import "./style.css";
+// import "./style.css";
 
 const menus0 = [
   {

@@ -23,7 +23,7 @@ const App = () => {
     // </>
 
     // <Ex06>
-    //   <PropsEx />
+    // <PropsEx />
     // </>
 
     // <Ex03 />
