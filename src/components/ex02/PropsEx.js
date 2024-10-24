@@ -72,6 +72,7 @@ const menus2 = [
 const PropsEx = () => {
   return (
     <div className="wrap">
+      yryr
       {/* <Contents text="contents 1" bgColor="salmon" />
       <Contents text="contents 2" bgColor="teal" /> */}
       <Ex foodMenus={menus0}></Ex>
