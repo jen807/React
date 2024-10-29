@@ -9,7 +9,9 @@
 // import Event from "./components/ex06/components/Event";
 // import Ex07 from "./components/ex07/Ex07";
 
-import Ex08 from "./components/ex08/Ex08";
+// import Ex08 from "./components/ex08/Ex08";
+
+import Study from "./components/study/Study";
 
 const App = () => {
   return (
@@ -34,7 +36,8 @@ const App = () => {
     // <Ex06 />
     // <Event />
     // <Ex07 />
-    <Ex08 />
+    // <Ex08 />
+    <Study />
   );
 };
 
