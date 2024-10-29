@@ -7,6 +7,11 @@ const Container = styled.div`
   max-width: 1920px;
   width: 100%;
   height: 100vh;
+
+  .logo {
+    font-size: 60px;
+    font-weight: 300;
+  }
 `;
 
 const ConWrap = styled.div`
@@ -58,13 +63,15 @@ const Main = () => {
   return (
     <Container>
       <SHeader>
-        ZARA
+        <Link to="/" className="logo">
+          ZARA
+        </Link>
         <Link to="/login">LOGIN</Link>
       </SHeader>
       ;
       <Banner>
         <img
-          src="https://i.pinimg.com/originals/2e/6b/45/2e6b45e96f2a9255b1a51b3baced7a86.jpg"
+          src="https://www.zaraaustralia.com/includes/templates/zaraaustralia/images/zara/banner6d.jpg"
           alt="bannerimg"
         />
       </Banner>

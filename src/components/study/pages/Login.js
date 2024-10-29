@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
-const LoginBox = styled.div`
+const Form = styled.form`
   width: 1500px;
   height: 600px;
   margin: 0 auto;
@@ -13,7 +14,8 @@ const LoginBox = styled.div`
 const SHeader = styled.header`
   width: 100%;
   height: 80px;
-  padding: 0 100px;
+  padding-left: 100px;
+  padding-right: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,8 +31,15 @@ const SHeader = styled.header`
 const ImgBox = styled.div`
   width: 400px;
   height: 400px;
-`;
 
+  img {
+    margin-bottom: 10px;
+  }
+
+  .signup {
+    color: black;
+  }
+`;
 const TitleBox = styled.div`
   margin-left: 60px;
   width: 500px;
@@ -51,6 +60,12 @@ const TitleBox = styled.div`
     padding-bottom: 10px;
     border-bottom: 2px solid #dbdbdb;
     font-size: 40px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 15px;
+    color: rgba(255, 0, 0, 0.5);
   }
 `;
 const Button = styled.button`
@@ -58,29 +73,61 @@ const Button = styled.button`
   width: 100%;
   height: 50px;
   margin-top: 60px;
+  color: ${(props) => (props.$isValid ? "black" : "#999")};
+  cursor: ${(props) => (props.$isValid ? "pointer" : "default")};
 `;
 
 const Login = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid },
+  } = useForm();
+
+  const nav = useNavigate();
+
+  const loginSubmit = (data) => {
+    alert(`${data.username}님 로그인 되셨습니다.`);
+    nav("/");
+  };
+
   return (
     <>
       <SHeader>
         ZARA
         <Link to="/login">LOGIN</Link>
       </SHeader>
-      <LoginBox>
+      <Form onSubmit={handleSubmit(loginSubmit)}>
         <ImgBox>
           <img
             src="https://www.ktnews.com/news/photo/201907/111800_64880_222.jpg"
             alt="#"
           />
+          <Link to="/signup" className="signup">
+            If you don't have account, click here for sign up
+          </Link>
         </ImgBox>
         <TitleBox>
           <h3>LOGIN</h3>
-          <input type="text" placeholder="ID" />
-          <input type="password" placeholder="PASSWORD" />
-          <Button>SIGN IN</Button>
+          <input
+            type="text"
+            placeholder="ID"
+            {...register("username", { required: "아이디는 필수입니다" })}
+          />
+          <p>{errors?.username?.message}</p>
+
+          <input
+            type="password"
+            placeholder="PASSWORD"
+            {...register("password", { required: "패스워드는 필수입니다" })}
+          />
+
+          <p>{errors?.password?.message}</p>
+          <Button type="submit" $isValid={isValid}>
+            SIGN IN
+          </Button>
         </TitleBox>
-      </LoginBox>
+      </Form>
     </>
   );
 };
