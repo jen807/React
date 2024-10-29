@@ -4,6 +4,10 @@ import reset from "styled-reset";
 export const GlobalStyled = createGlobalStyle`
     ${reset}
 
+    *{
+        box-sizing: border-box;
+    }
+
     li, ul{
         list-style: none;
     }
