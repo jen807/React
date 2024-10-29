@@ -96,7 +96,9 @@ const Signup = () => {
   return (
     <>
       <SHeader>
-        ZARA
+        <Link to="/" className="logo">
+          ZARA
+        </Link>
         <Link to="/login">LOGIN</Link>
       </SHeader>
       <Form onSubmit={handleSubmit(loginSubmit)}>

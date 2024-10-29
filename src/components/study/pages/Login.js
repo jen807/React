@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 
 const Form = styled.form`
   width: 1500px;
@@ -77,7 +80,31 @@ const Button = styled.button`
   cursor: ${(props) => (props.$isValid ? "pointer" : "default")};
 `;
 
+const PasswordWrap = styled.div`
+  position: relative;
+
+  h3 {
+    cursor: pointer;
+    font-size: 35px;
+    position: absolute;
+    top: 38px;
+    right: 10px;
+  }
+`;
+
 const Login = () => {
+  const [show, setShow] = useState("password");
+  const [open, setOpen] = useState(faEye);
+
+  const togglePassword = () => {
+    if (show === "password") {
+      setShow("text");
+      setOpen(faEyeSlash);
+    } else {
+      setShow("password");
+      setOpen(faEye);
+    }
+  };
   const {
     register,
     handleSubmit,
@@ -94,7 +121,9 @@ const Login = () => {
   return (
     <>
       <SHeader>
-        ZARA
+        <Link to="/" className="logo">
+          ZARA
+        </Link>
         <Link to="/login">LOGIN</Link>
       </SHeader>
       <Form onSubmit={handleSubmit(loginSubmit)}>
@@ -116,13 +145,19 @@ const Login = () => {
           />
           <p>{errors?.username?.message}</p>
 
-          <input
-            type="password"
-            placeholder="PASSWORD"
-            {...register("password", { required: "패스워드는 필수입니다" })}
-          />
+          <PasswordWrap>
+            <input
+              type={show}
+              placeholder="PASSWORD"
+              {...register("password", { required: "패스워드는 필수입니다" })}
+            />
+            <p>{errors?.password?.message}</p>
 
-          <p>{errors?.password?.message}</p>
+            <h3 onClick={togglePassword}>
+              <FontAwesomeIcon icon={open} />
+            </h3>
+          </PasswordWrap>
+
           <Button type="submit" $isValid={isValid}>
             SIGN IN
           </Button>
